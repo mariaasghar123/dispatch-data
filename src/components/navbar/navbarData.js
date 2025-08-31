@@ -24,15 +24,15 @@ export const productsData = [
     title: "Services",
     links: [
       { name: "Operating Authority", path: "/operating-authority" },
-      { name: "Broker TMS", path: "/broker-tms" },
-      { name: "Insurance", path: "/insurance" },
-      { name: "View All Products", path: "/all-products" },
+      // { name: "Broker TMS", path: "/broker-tms" },
+      // { name: "Insurance", path: "/insurance" },
+      // { name: "View All Products", path: "/all-products" },
     ],
   },
-  {
-    title: "Product Finder",
-    links: [{ name: "Find the solution right for you", path: "/product-finder" }],
-  },
+  // {
+  //   title: "Product Finder",
+  //   links: [{ name: "Find the solution right for you", path: "/product-finder" }],
+  // },
 ];
 
 export const transportationData = [
@@ -66,17 +66,17 @@ export const resourcesData = [
     title: "Start-Up Guides",
     links: [{ name: "Operating Authority", path: "/operating-authority" }],
   },
-  {
-    title: "News & Events",
-    links: [{ name: "Find the solution right for you", path: "/product-finder" }],
-  },
-  {
-    title: "DAT University",
-    links: [{ name: "Find the solution right for you", path: "/product-finder" }],
-  },
-  {
-    title: "Resources",
-    path: "/resources",
-    links: [{ name: "View all resources", path: "/resources" }],
-  },
+  // {
+  //   title: "News & Events",
+  //   links: [{ name: "Find the solution right for you", path: "/product-finder" }],
+  // },
+  // {
+  //   title: "DAT University",
+  //   links: [{ name: "Find the solution right for you", path: "/product-finder" }],
+  // },
+  // {
+  //   title: "Resources",
+  //   path: "/resources",
+  //   links: [{ name: "View all resources", path: "/resources" }],
+  // },
 ];
