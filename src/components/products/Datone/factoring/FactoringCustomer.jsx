@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function FactoringCustomer() {
   const reviews = [
@@ -57,6 +58,7 @@ export default function FactoringCustomer() {
         <p className="mt-4 text-gray-200 font-medium">Need Help Deciding?</p>
 
         {/* Button */}
+        <Link to="/career">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -64,6 +66,8 @@ export default function FactoringCustomer() {
         >
           Find the Carrier Plan
         </motion.button>
+        </Link>
+
 
         {/* Reviews Section */}
         <p className="mt-12 text-lg sm:text-xl font-semibold">

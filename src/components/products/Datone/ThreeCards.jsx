@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function ThreeCards() {
   return (
@@ -35,6 +36,7 @@ export default function ThreeCards() {
         </p>
 
         {/* Button with hover + scale animation */}
+        <Link to="/career">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -42,6 +44,7 @@ export default function ThreeCards() {
         >
           Find the Carrier Plan
         </motion.button>
+        </Link>
       </motion.div>
     </div>
   );

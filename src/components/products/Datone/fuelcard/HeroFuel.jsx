@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function FuelHero() {
   return (
@@ -28,9 +29,11 @@ export default function FuelHero() {
           
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mt-6">
+            <Link to="/about">
             <button className="border border-blue-600 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300">
               Learn More
             </button>
+            </Link>
           </div>
         </div>
       </div>

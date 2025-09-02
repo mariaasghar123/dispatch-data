@@ -22,6 +22,7 @@ import Signup from './components/registration/Signup';
 import BrokerPage from './pages/brokers/BrokerPage';
 import ShipperPage from "./pages/shippers/ShipperPage"
 import ScrollToTop from './ScrollTop';
+import Apply from './pages/contact/Apply';
 
 export default function App() {
   return (
@@ -55,6 +56,8 @@ export default function App() {
           {/* registration */}
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
+            {/* apply form */}
+          <Route path='/apply' element={<Apply/>}/>
 
 
         </Routes>

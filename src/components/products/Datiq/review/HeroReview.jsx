@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function HeroReview({
   imageSrc,
@@ -82,14 +83,18 @@ export default function HeroReview({
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mt-6"
           >
             {primaryBtnText && (
+              <Link to="/contact">
               <button className="border border-blue-600 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300">
                 {primaryBtnText}
               </button>
+              </Link>
             )}
             {secondaryBtnText && (
+              <Link to="/about">
               <button className="border border-blue-600 rounded-full bg-transparent px-6 py-3 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
                 {secondaryBtnText}
               </button>
+              </Link>
             )}
           </motion.div>
         </motion.div>

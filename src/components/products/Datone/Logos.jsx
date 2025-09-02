@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Logos() {
   const logos = [
@@ -42,6 +43,7 @@ export default function Logos() {
         <p className="mt-4 text-gray-200 font-medium">Need Help Deciding?</p>
 
         {/* Button */}
+        <Link to="/career">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -49,6 +51,7 @@ export default function Logos() {
         >
           Find the Carrier Plan
         </motion.button>
+        </Link>
          <p className="mt-6 text-lg sm:text-xl font-semibold">
          Award-Winning Freight Technology
 

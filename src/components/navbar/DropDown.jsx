@@ -55,7 +55,7 @@ export default function DropdownMenu({ title, sections, path, isSearch }) {
                   className="border px-4 py-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-[#eb2556]"
                 />
                 <button className="bg-black text-white py-2 rounded-md hover:bg-gray-800">
-                  Search
+                  search
                 </button>
               </div>
             ) : (

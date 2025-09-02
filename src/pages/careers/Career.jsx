@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Briefcase, Users, HeartHandshake } from "lucide-react";
 
 export default function Career() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-6 lg:px-20">
+    <div className=" bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-6 lg:px-20">
       {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
@@ -39,9 +40,11 @@ export default function Career() {
             Browse current job openings and apply to be a part of our growing
             team.
           </p>
+          <Link to="/contact">
           <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
             View Jobs
           </button>
+          </Link>
         </motion.div>
 
         {/* Culture */}
@@ -54,9 +57,11 @@ export default function Career() {
           <p className="text-gray-600 mt-2">
             A collaborative environment where innovation and creativity thrive.
           </p>
+          <Link to="/about">
           <button className="mt-4 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
             Learn More
           </button>
+          </Link>
         </motion.div>
 
         {/* Benefits */}
@@ -70,9 +75,11 @@ export default function Career() {
             From flexible hours to health coverage, we care about our employees’
             well-being.
           </p>
+          <Link to="/transportationsolutions">
           <button className="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
             See Benefits
           </button>
+          </Link>
         </motion.div>
       </div>
     </div>

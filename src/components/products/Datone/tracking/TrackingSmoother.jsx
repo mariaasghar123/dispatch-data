@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function TrackingSmoother() {
   return (
@@ -76,9 +77,11 @@ export default function TrackingSmoother() {
                           viewport={{ once: true }}
                           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mt-6"
                         >
+                          <Link to="/about">
                           <button className="border border-blue-600 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300">
                            Request A Demo
                           </button>
+                          </Link>
                         </motion.div>
             </motion.div> 
           ))}

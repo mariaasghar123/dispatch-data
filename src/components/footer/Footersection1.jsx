@@ -1,8 +1,63 @@
-import React from 'react';
+import React, { useState } from "react";
+import { db } from "../firebase/firebaseconfig";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function Footersection() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  // Handle Input Change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Validate Email
+  const validateEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  // Submit Form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    // Validation
+    if (!formData.firstName || !formData.lastName || !formData.phone || !formData.email || !formData.message) {
+      setError("All fields are required!");
+      return;
+    }
+    if (!validateEmail(formData.email)) {
+      setError("Invalid email address!");
+      return;
+    }
+    if (formData.phone.length < 10) {
+      setError("Phone number must be at least 10 digits!");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "messages"), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
+      setSuccess("Message sent successfully ✅");
+      setFormData({ firstName: "", lastName: "", phone: "", email: "", message: "" });
+    } catch (err) {
+      setError("Failed to send message. Try again later.");
+    }
+  };
+
   return (
-    <div className="bg-[#FCFCEB] min-h-[400px] flex flex-col gap-40 lg:flex-row justify-center items-stretch gap-10 px-10 py-16 relative">
+    <div className="bg-[#FCFCEB] min-h-[400px] flex flex-col lg:flex-row justify-center items-stretch gap-10 px-10 py-16 relative">
       
       {/* Background Image */}
       <img 
@@ -13,7 +68,7 @@ export default function Footersection() {
       />
 
       {/* Left Side */}
-      <div className="bg-white p-6 sm:p-10 rounded shadow lg:w-[560px]  relative z-20 flex flex-col justify-between">
+      <div className="bg-white p-6 sm:p-10 rounded shadow lg:w-[560px] relative z-20 flex flex-col justify-between">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center lg:text-left">
           Let Us Mend a Helping Hand
         </h2>
@@ -25,13 +80,17 @@ export default function Footersection() {
           {/* Phone */}
           <div className="flex items-center gap-4 bg-gray-200 p-4 sm:p-6 border border-gray-500 rounded">
             <div className="w-5 h-5 rounded-full bg-[#AA8863]"></div>
-            <span className="text-base sm:text-lg font-medium">+1 (000) 000-0000</span>
+            <a href="tel:+10000000000" className="text-base sm:text-lg font-medium">
+              +1 (000) 000-0000
+            </a>
           </div>
 
           {/* Email */}
           <div className="flex items-center gap-4 bg-gray-200 p-4 border border-gray-500 rounded">
             <div className="w-5 h-5 rounded-full bg-[#AA8863]"></div>
-            <span className="text-base sm:text-lg font-medium">info@xyz.com</span>
+            <a href="mailto:info@xyz.com" className="text-base sm:text-lg font-medium">
+              info@xyz.com
+            </a>
           </div>
         </div>
 
@@ -41,34 +100,55 @@ export default function Footersection() {
       </div>
 
       {/* Right Side Form */}
-      <form className="w-50%  flex flex-col gap-4 relative z-20">
+      <form 
+        onSubmit={handleSubmit} 
+        className="flex flex-col gap-4 relative z-20 w-full max-w-lg"
+      >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-black">
           <input
             type="text"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
             placeholder="First Name"
             className="border border-black rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AA8863]"
           />
           <input
             type="text"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
             placeholder="Last Name"
             className="border border-black rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AA8863]"
           />
           <input
             type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
             placeholder="Phone Number"
             className="border border-black rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AA8863]"
           />
           <input
             type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder="Email Address"
             className="border border-black rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AA8863]"
           />
         </div>
         <textarea
           rows="5"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
           placeholder="Message"
           className="border border-black rounded px-4 py-3 mt-4 resize-none focus:outline-none focus:ring-2 focus:ring-[#AA8863]"
         />
+
+        {error && <p className="text-red-600 font-medium">{error}</p>}
+        {success && <p className="text-green-600 font-medium">{success}</p>}
 
         <button
           type="submit"

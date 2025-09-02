@@ -17,7 +17,7 @@ export default function Login() {
     setError("");
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/home");
+      navigate("/");
 
       // Role ke hisaab se navigate karo
       // if (role === "carrier") {

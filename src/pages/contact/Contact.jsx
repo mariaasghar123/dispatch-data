@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 // Reusable Flip Card Component
 function FlipCard({ role, desc, requirements }) {
   const [flipped, setFlipped] = useState(false);
@@ -41,9 +41,12 @@ function FlipCard({ role, desc, requirements }) {
             <li key={i}>⚡ {req}</li>
           ))}
         </ul>
-        <button className="mt-4 sm:mt-6 px-4 sm:px-5 py-2 bg-white text-indigo-700 rounded-lg font-semibold hover:bg-gray-200 transition text-sm sm:text-base">
-          Apply Now
-        </button>
+        {/* Apply Button with Link */}
+        <Link to={`/apply?role=${encodeURIComponent(role)}`}>
+          <button className="mt-4 sm:mt-6 px-4 sm:px-5 py-2 bg-white text-indigo-700 rounded-lg font-semibold hover:bg-gray-200 transition text-sm sm:text-base">
+            Apply Now
+          </button>
+        </Link>
       </div>
     </motion.div>
   );

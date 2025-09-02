@@ -34,8 +34,8 @@ export default function Footersection2() {
         <div>
           <h3 className="font-semibold mb-4">TERMS</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:underline">Terms and Conditions</a></li>
-            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
+            <li><a href="/about" className="hover:underline">Terms and Conditions</a></li>
+            <li><a href="/about" className="hover:underline">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -43,8 +43,8 @@ export default function Footersection2() {
         <div>
           <h3 className="font-semibold mb-4">LINKS</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:underline">Job Application</a></li>
-            <li><a href="#" className="hover:underline">News</a></li>
+            <li><a href="/contact" className="hover:underline">Job Application</a></li>
+            <li><a href="/contact" className="hover:underline">News</a></li>
           </ul>
         </div>
 
@@ -52,7 +52,7 @@ export default function Footersection2() {
         <div>
           <h3 className="font-semibold mb-4">CONTACT INFO</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:underline">Map Location</a></li>
+            <li><a href="/contact" className="hover:underline">Map Location</a></li>
           </ul>
         </div>
       </div>
