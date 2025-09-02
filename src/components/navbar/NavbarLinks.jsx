@@ -17,9 +17,6 @@ export default function NavbarLinks({ user, onLogout }) {
       <Link to="/about" className="hover:text-[#eb2556]">About Us</Link>
       <Link to="/contact" className="hover:text-[#eb2556]">Contact Us</Link>
 
-      {/* 🔍 Search Dropdown */}
-      <DropdownMenu title="Search" isSearch={true} />
-
       {/* ✅ Auth Section */}
       {user ? (
         <>
