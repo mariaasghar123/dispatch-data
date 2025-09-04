@@ -17,18 +17,18 @@ export default function Drivers() {
             {/* Card 1 */}
             <div
               className="flex flex-col gap-3 rounded items-center justify-center border bg-white/60 backdrop-blur-md 
-                   sm:w-[400px] w-[500px] md-[400px] lg:w-[580px]  lg:h-[480px] sm:h-[600px] px-4 shadow-md"
+                   sm:w-[100px] w-[320px] md-[400px] lg:w-[580px]  lg:h-[480px] sm:h-[600px] px-4 shadow-md"
             >
               <div>
-                <p className="text-4xl sm:text-2xl lg:text-4xl font-bold mb-10">
+                <p className="text-2xl sm:text-xl lg:text-4xl font-bold mb-10">
                   CDL QUALIFICATIONS
                 </p>
-                <p className="text-lg">
+                <p className="text-sm">
                   Top Team Carrier offers services thoughout the 48 states
                   within the continental United States. Our drivers are always
                   ready to move freight wherever necessary.
                 </p>
-                <p className="text-lg mt-4">
+                <p className="text-sm mt-4">
                   With the implementation of new equipment, modern technological
                   systems and an excellent dispatch team, Top Team Carrier
                   strives to keep its drivers on the road earning with as little
@@ -46,7 +46,7 @@ export default function Drivers() {
           {/* Heading */}
 
           {/* Paragraphs */}
-          <p className=" text-sm sm:text-base md:text-lg font-normal sm:w-[95%] lg:w-3/4 py-10 px-10 border border-black rounded">
+          <p className=" text-sm sm:text-base md:text-lg font-normal sm:w-[90%] mr-8 lg:w-3/4 py-10 px-10 border border-black rounded">
             <h1 className="text-2xl font-medium mb-4">
               Qualifications for CDL Drivers
             </h1>
@@ -64,13 +64,13 @@ export default function Drivers() {
               considered for employment by the company.
             </p>
           </p>
-          <p className="mt-6 text-sm sm:text-base md:text-lg font-medium sm:w-[95%] lg:w-3/4 border border-black rounded py-4 px-10">
+          <p className="mt-6 text-sm sm:text-base md:text-lg mr-8 font-medium sm:w-[95%] lg:w-3/4 border border-black rounded py-4 px-10">
             Disqualifications
           </p>
-          <p className="mt-6 text-sm sm:text-base md:text-lg font-medium sm:w-[95%] lg:w-3/4 border border-black rounded py-4 px-10">
+          <p className="mt-6 text-sm sm:text-base md:text-lg mr-8 font-medium sm:w-[95%] lg:w-3/4 border border-black rounded py-4 px-10">
             Home Time Guaranteed
           </p>
-          <p className="mt-6 text-sm sm:text-base md:text-lg font-medium sm:w-[95%] lg:w-3/4 border border-black rounded py-4 px-10">
+          <p className="mt-6 text-sm sm:text-base md:text-lg mr-8 font-medium sm:w-[95%] lg:w-3/4 border border-black rounded py-4 px-10">
             Weekly Payments
           </p>
         </div>

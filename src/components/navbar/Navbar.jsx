@@ -141,7 +141,7 @@ export default function Navbar() {
                   />
                 </button>
                 <AnimatePresence>
-                  {activeDropdown === menu && (
+                  {/* {activeDropdown === menu && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
@@ -172,7 +172,41 @@ export default function Navbar() {
                         </div>
                       ))}
                     </motion.div>
-                  )}
+                  )} */}
+                  {activeDropdown === menu && (
+  <motion.div
+    initial={{ height: 0, opacity: 0 }}
+    animate={{ height: "auto", opacity: 1 }}
+    exit={{ height: 0, opacity: 0 }}
+    className="pl-4 space-y-3 mt-2 border-l-2 border-[#eb2556]/40 
+               bg-gray-50 rounded-lg shadow-inner"   // 👈 yahan styling badalni hai
+  >
+    {(menu === "products"
+      ? productsData
+      : menu === "transport"
+      ? transportationData
+      : resourcesData
+    ).map((section, idx) => (
+      <div key={idx} className="pb-3 border-b border-gray-200 last:border-0">
+        <p className="font-medium text-gray-800">{section.title}</p>
+        <ul className="pl-3 mt-1 space-y-1">
+          {section.links.map((link, i) => (
+            <li key={i}>
+              <Link
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className="block py-1 text-sm text-gray-600 hover:text-[#eb2556] transition"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </motion.div>
+)}
+
                 </AnimatePresence>
               </motion.div>
             ))}
@@ -203,12 +237,12 @@ export default function Navbar() {
               variants={linkVariants}
               className="flex flex-col gap-2 w-full mt-4"
             >
-              <a
+              {/* <a
                 href="/search"
                 className="bg-black text-white px-4 py-2 font-bold hover:bg-gray-800 transition text-center"
               >
                 
-              </a>
+              </a> */}
 
               {user ? (
                 // 👇 If logged in → show name + logout

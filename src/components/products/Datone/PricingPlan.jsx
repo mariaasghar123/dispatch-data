@@ -8,7 +8,7 @@ export default function PricingPlans() {
     {
       title: "DAT One Enhanced",
       recommended: "Recommended for New OTR Owner-Operators",
-      price: 99, // number me rakhen
+      price: 99,
       per: "/month",
       features: [
         "Broker Credit Score & Days to Pay",
@@ -57,8 +57,8 @@ export default function PricingPlans() {
   };
 
   return (
-    <div className="bg-black text-white py-20 px-6">
-      <div className="flex flex-col lg:flex-row flex-wrap gap-8 justify-center items-center max-w-6xl mx-auto">
+    <div className="bg-black text-white py-16 px-4 sm:px-6 lg:px-12">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {plans.map((plan, idx) => {
           const { ref, inView } = useInView({
             triggerOnce: true,
@@ -69,7 +69,7 @@ export default function PricingPlans() {
             <motion.div
               key={idx}
               ref={ref}
-              className={`relative w-full sm:w-[90%] md:w-[400px] lg:w-[350px] bg-[#111827] rounded-lg shadow-lg flex flex-col justify-between ${
+              className={`relative w-full bg-[#111827] rounded-lg shadow-lg flex flex-col justify-between ${
                 plan.highlight ? "border-2 border-blue-500" : ""
               }`}
               variants={cardVariants}
@@ -84,7 +84,7 @@ export default function PricingPlans() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-purple-600 text-xs font-bold px-4 py-1 rounded"
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-purple-600 text-xs font-bold px-3 py-1 rounded"
                 >
                   MOST POPULAR
                 </motion.div>
@@ -92,24 +92,26 @@ export default function PricingPlans() {
 
               {/* Content */}
               <div className="p-6 flex flex-col items-center text-center">
-                <h2 className="text-2xl font-bold">{plan.title}</h2>
-                <p className="mt-2 text-gray-400 text-sm">{plan.recommended}</p>
+                <h2 className="text-xl sm:text-2xl font-bold">{plan.title}</h2>
+                <p className="mt-2 text-gray-400 text-xs sm:text-sm">
+                  {plan.recommended}
+                </p>
 
                 <div className="mt-6">
-                  <span className="text-4xl font-extrabold">
+                  <span className="text-3xl sm:text-4xl font-extrabold">
                     {inView ? (
                       <CountUp start={0} end={plan.price} duration={2} />
                     ) : (
                       plan.price
                     )}
                   </span>
-                  <span className="text-lg font-medium text-gray-400">
+                  <span className="text-base sm:text-lg font-medium text-gray-400">
                     {plan.per}
                   </span>
                 </div>
 
                 {plan.extra && (
-                  <p className="text-sm text-gray-400 mt-1">{plan.extra}</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">{plan.extra}</p>
                 )}
 
                 {/* Features */}
@@ -131,7 +133,7 @@ export default function PricingPlans() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-purple-700 hover:bg-purple-800 text-white py-3 rounded-md font-semibold transition"
+                  className="w-full bg-purple-700 hover:bg-purple-800 text-white py-2 sm:py-3 rounded-md font-semibold transition text-sm sm:text-base"
                 >
                   {plan.buttonText}
                 </motion.button>
@@ -147,7 +149,7 @@ export default function PricingPlans() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center text-gray-400 text-sm mt-10"
+        className="text-center text-gray-400 text-xs sm:text-sm mt-10 px-4"
       >
         DAT One Mobile app is included in all subscriptions
       </motion.p>
